@@ -1,0 +1,20 @@
+{
+  "baseline value": 123.0,
+  "accelerations": 0.0,
+  "uterine_contractions": 0.007,
+  "light_decelerations": 0.002,
+  "severe_decelerations": 0.0,
+  "prolongued_decelerations": 0.002,
+  "mean_value_of_short_term_variability": 4.3,
+  "percentage_of_time_with_abnormal_long_term_variability": 0.0,
+  "mean_value_of_long_term_variability": 19.4,
+  "histogram_min": 50.0,
+  "histogram_max": 196.0,
+  "histogram_number_of_peaks": 8.0,
+  "histogram_number_of_zeroes": 1.0,
+  "histogram_mode": 126.0,
+  "histogram_mean": 105.0,
+  "histogram_median": 113.0,
+  "histogram_variance": 117.0,
+  "histogram_tendency": 0.0
+}
