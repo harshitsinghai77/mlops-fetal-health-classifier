@@ -8,4 +8,4 @@ docker build --tag=harshitsinghai77/mlops-cookbook .
 docker image ls
 
 # Run flask app
-docker run -p 127.0.0.1:8080:8080 harshitsinghai77/mlops-cookbook
+docker run -p 127.0.0.1:8000:8000 harshitsinghai77/mlops-cookbook
