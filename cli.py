@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import click
+
 from model import predict
 from utils import check_columns_exists, load_file
 from utils.constant import DF_COLUMNS

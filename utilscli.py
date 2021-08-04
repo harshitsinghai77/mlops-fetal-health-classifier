@@ -1,8 +1,9 @@
+"""CLI commands for ML operations."""
 #!/usr/bin/env python
-import requests
 import click
-import model
+import requests
 
+import model
 from utils import load_file
 
 

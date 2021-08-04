@@ -1,22 +1,23 @@
 """MLOps Library"""
 
-import pandas as pd
+import logging
+
 import joblib
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
+import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.model_selection import cross_val_score, train_test_split, GridSearchCV
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     accuracy_score,
-    recall_score,
     classification_report,
-    precision_score,
     f1_score,
+    precision_score,
+    recall_score,
 )
-import logging
+from sklearn.model_selection import GridSearchCV, cross_val_score, train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVC
+from sklearn.tree import DecisionTreeClassifier
 
 from utils.constant import FETAL_HEALTH_DICT
 
@@ -81,6 +82,7 @@ def get_best_model(X_train, y_train):
 
 
 def get_grid_search_best_parameters(X_train, y_train):
+    """Grid search to find the best parameters."""
     # Building a dictionalry with list of optional values that will me analyesed by GridSearch CV
     parameters = {
         "n_estimators": [100, 150, 200, 500, 700, 900],
@@ -126,7 +128,7 @@ def retrain(model_name="model.joblib"):
     df = data()
     # assigning values to features as X and target as y
     X = df.drop(["fetal_health"], axis=1)
-    y = df["fetal_health"]
+    y = df["fetal_health"] if df else None
 
     # Set up a standard scaler for the features
     col_names = list(X.columns)
@@ -148,7 +150,7 @@ def retrain(model_name="model.joblib"):
     predictions = classifier.predict(X_test)
     accuracy = model_metrics(classifier_name, y_test, predictions)
 
-    logging.debug(f"Model Accuracy: {accuracy}")
+    logging.debug("Model Accuracy: %s", accuracy)
     joblib.dump(classifier, model_name)
     return accuracy, model_name
 

@@ -2,9 +2,9 @@ import logging
 
 import uvicorn
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
 from fastapi.exceptions import HTTPException
 from fastapi.requests import Request
+from fastapi.responses import HTMLResponse
 
 import model
 from utils import check_columns_exists
