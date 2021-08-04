@@ -17,8 +17,11 @@ format:
 predict:
 	cd scripts && bash predict.sh
 
-run_docker:
+build_docker:
 	bash scripts/run_docker.sh
+
+run_docker:
+	docker run --rm -p 8000:8000 harshitsinghai77/fetal-health-classifier
 
 lint:
 	pylint --disable=C,R0914,E1136 model cli utilscli
