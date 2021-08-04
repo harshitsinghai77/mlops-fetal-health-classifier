@@ -5,6 +5,9 @@ install:
 	pip3 install --upgrade pip &&\
 		pip3 install -r requirements.txt
 
+install_dev:
+	pip3 install -r requirements-dev.txt
+
 test:
 	pytest
 
