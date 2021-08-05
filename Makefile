@@ -11,6 +11,9 @@ install_dev:
 test:
 	pytest
 
+test_azure_endpoint:
+	python scripts/test_azure_endpoint.py
+
 format:
 	black *.py
 
