@@ -17,7 +17,6 @@ jobs:
     - name: Install dependencies
       run: |
         make install
-        make install_dev
         
     - name: Lint with pylint
       run: |

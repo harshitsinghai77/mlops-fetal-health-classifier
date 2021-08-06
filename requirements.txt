@@ -5,3 +5,6 @@ fastapi==0.68.0
 uvicorn==0.14.0
 joblib==1.0.1
 requests==2.25.1
+pylint==2.7.2
+pytest==6.2.2
+black==20.8b1
