@@ -10,23 +10,9 @@ Normal
 Suspect
 Pathological
 
-### Model deployed in Azure using Azure Machine Learning Studio
+## Jupyter Notebook
 
-```bash
-make test_azure_endpoint
-```
-
-Endpoint: http://5534d0ff-e421-4bee-bcb1-aa8d66be732d.centralindia.azurecontainer.io/score
-
-Check Makefile for more commands on how to interact with the model.
-
-## Azure support
-
-To check the azure scripts go to `scripts/azure` directory.
-
-## GithuAction
-
-The projects has CI support using GitHub Actions.
+Notebook can be found inside `notebook/Fetal Health Classification.ipynb`.
 
 ## ML Inference via command line
 
@@ -58,7 +44,7 @@ CLI follows the following commands
 3. `precit`
 4. `retrain`
 
-## FastAPI server
+## FastAPI Web Appp
 
 ```bash
 python main.py
@@ -76,6 +62,13 @@ Go to http://127.0.0.1:8000/docs
 
 ```bash
 make test
+```
+
+## Lint and Format
+
+```bash
+make lint
+make format
 ```
 
 ## Test local endpoints
@@ -96,7 +89,7 @@ make test_azure_endpoint
 kubectl apply -f kubernetes.yaml
 ```
 
-## Docker
+## Docker Support
 
 Build docker images
 
@@ -115,3 +108,21 @@ Lint Docker
 ```bash
 make docker_lint
 ```
+
+### Model deployed in Azure using Azure Machine Learning Studio
+
+```bash
+make test_azure_endpoint
+```
+
+Endpoint: http://5534d0ff-e421-4bee-bcb1-aa8d66be732d.centralindia.azurecontainer.io/score
+
+Check Makefile for more commands on how to interact with the model.
+
+## Azure support
+
+To check the azure scripts go to `scripts/azure` directory.
+
+## GithuAction
+
+The projects has CI support using GitHub Actions.
