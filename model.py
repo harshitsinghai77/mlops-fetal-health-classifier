@@ -128,7 +128,7 @@ def retrain(model_name="model.joblib"):
     df = data()
     # assigning values to features as X and target as y
     X = df.drop(["fetal_health"], axis=1)
-    y = df["fetal_health"] if df else None
+    y = df["fetal_health"]
 
     # Set up a standard scaler for the features
     col_names = list(X.columns)
