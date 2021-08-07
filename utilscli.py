@@ -16,7 +16,7 @@ def cli():
 @cli.command("retrain")
 def retrain():
     """Retrain Model
-    You may want to extend this with more options, such as setting model_name
+    Retrain the model with the new dataset.
     """
 
     click.echo(click.style("Retraining Model", bg="green", fg="white"))
