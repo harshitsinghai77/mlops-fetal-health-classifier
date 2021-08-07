@@ -7,5 +7,5 @@ docker build --tag=harshitsinghai77/fetal-health-classifier .
 # List docker images
 docker image ls
 
-# Run flask app
+# Run FastAPI app
 docker run --rm -p 8000:8000 harshitsinghai77/fetal-health-classifier

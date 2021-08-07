@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fetal-health-classifier-app
+spec:
+  selector:
+    app: fetal-health-classifier
+  ports:
+  - protocol: "TCP"
+    port: 8000
+    targetPort: 8000
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fetal-health-classifier
+spec:
+  selector:
+    matchLabels:
+      app: fetal-health-classifier
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: fetal-health-classifier
+    spec:
+      containers:
+      - name: fetal-health-classifier
+        image: fetal-health-classifier:latest
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000
+
